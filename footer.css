@@ -1,0 +1,177 @@
+*{
+    margin: 0%;
+    padding: 0%;
+    box-sizing: border-box;
+}
+html,body{
+    height: 100%;
+    width: 100%;
+
+}
+#main-footer{
+    width: 100%;
+    height: 100vh;
+    background-color: black;
+    padding: 0 2vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#footer{
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    /* flex-direction: column; */
+    /* align-items: center; */
+    justify-content: space-between;
+    width: 85vw;
+    height: 75vh;
+    border-radius: 80px;
+    background-color:  #fff;
+    padding: 8vw 4vw;
+}
+#rdiv{
+    position: relative;
+    width: 30vw;
+    display: flex;
+    flex-direction: column;
+    /* height: 35vh; */
+    background-color:#fff ;
+    
+    
+    
+}
+#rdiv>h2{
+    font-size: 20px;
+}
+#maildiv{
+    position: relative;
+    height: 30px;
+    width: 300px;
+    margin-top: 20px;
+    background-color:#fff ;
+    border: 1px solid ;
+    padding: 4px 20px;
+    border-radius: 50px;
+    
+}
+#maildiv>input{
+    border: none;
+    background-color: transparent;
+    outline: none;
+    height: 100%;
+    width: 100%;
+    font-family: gilroy;
+}
+#rdiv>.btt1{
+    margin-top: 10px;
+    /* right: 0%; */
+    width: 110px;
+    height: 30px;
+    background-color: rgb(43, 43, 43);
+    color: #fff;
+    border-radius: 50px;
+    border: 1px solid black;
+    cursor: pointer;
+    transition: 1s cubic-bezier(0.19, 1, 0.22, 1) all ;
+    font-size: 11px;
+
+}
+ 
+#rdiv>.btt1:hover{
+    border: 5px solid rgb(255, 255, 255);
+    background-color: rgb(68, 68, 68);
+    height: 40px;
+
+
+
+}
+ 
+#ldiv{
+    width: 50vw;
+    height: 35vh;
+    /* background-color:#7dffbe ; */
+    display: flex;
+    gap:5vw;
+    padding: 5px 15px;
+}
+.div1>h4{
+    
+    /* font-family: 00; */
+    font-size: 1.5vw;
+    width: 100px; 
+     
+}
+
+#footer a{
+display: flex;
+text-decoration: none;
+color: black;
+margin-top: 10px;
+font-size:1vw ;
+font-family: gilroy;
+font-weight: 600;
+}
+#scroll-div{
+    position: absolute;
+    left: 0%;
+    bottom: 0%;
+    width: 100%;
+    /* height: 100px; */
+    white-space: nowrap;
+    /* overflow-x: auto; */
+    overflow-y: hidden;
+
+}
+#scroll-div img{
+width: 160px;
+
+animation: scroll 20s linear   infinite both;
+/* background-color: red; */
+transition: all ease-in-out 1s;
+ 
+
+}
+#scroll-div::-webkit-scrollbar{
+    display: none;
+}
+@keyframes scroll {
+    0%{
+        transform: translateX(calc(-100% - 32px));
+    }
+    50%{
+        transform: translateX(0);
+        
+    }
+    100%{
+        transform: translateX(calc(-100% - 32px));
+    }
+    
+}
+
+@media screen and (max-width:600px) {
+
+    #footer{
+        flex-direction: column;
+        padding: 10vw 5vw;
+    }
+    #maildiv{
+        width: 80%;
+    }
+    #rdiv{
+        width: 100%;
+        
+    }
+    .div1{
+        width: 20vw;
+    }
+    #ldiv{
+        position: relative;
+        height: 30vh;
+        gap: 0vw;
+
+        /* background-color: red; */
+    }
+
+    
+}

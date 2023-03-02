@@ -1,0 +1,281 @@
+* {
+    margin: 0%;
+    padding: 0%;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    height: 100%;
+    width: 100%;
+}
+
+#products {
+    position: relative;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transform-origin: 0% 0%;
+    display: flex;
+    height: 95%;
+    width: 95%;
+    z-index: 100000;
+    background-color: whitesmoke;
+    border-radius: 30px;
+    box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.562);
+    overflow: hidden;
+    scale: 0;
+    transition: 1s cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+#cancel {
+    margin-top: 20px;
+    margin-left: 20px;
+    height: 3vw;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+#cancel i {
+    font-size: 3vw;
+    color: #333;
+}
+
+#pd-ldiv {
+    position: relative;
+    border-right: 1px solid rgba(0, 0, 0, 0.226);
+    width: 28%;
+    height: 100%;
+    padding: 2vw 1vw;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.dropdown {
+    position: relative;
+    margin-left: 20px;
+    width: 300px;
+    height: 50px;
+    border-radius: 20px;
+    border-top: 1px solid transparent;
+}
+
+.dropdown::before {
+    content: "";
+    position: absolute;
+    right: 30px;
+    top: 15px;
+    z-index: 100;
+    width: 8px;
+    height: 8px;
+    border: 2px solid #333;
+    border-top: 2px solid #fff;
+    border-right: 2px solid #fff;
+    transform: rotate(-45deg);
+    pointer-events: none;
+    transition: 0.5s;
+
+
+}
+
+.dropdown.active::before {
+    top: 22px;
+    transform: rotate(-225deg);
+}
+
+.dropdown input {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+    background: #fff;
+    border: none;
+    outline: none;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+    padding: 12px 20px;
+    border-radius: 10px;
+}
+
+.dropdown .option {
+    position: absolute;
+    top: 60px;
+    width: 100%;
+    background: #fff;
+    box-shadow: 0 30px 30px rgba(0, 0, 0, 0.05);
+    border-radius: 10px;
+    overflow: hidden;
+    display: none;
+}
+
+.dropdown.active .option {
+    display: block;
+}
+
+.dropdown .option div {
+    padding: 12px 20px;
+    cursor: pointer;
+    transition: 0.4s;
+}
+
+.dropdown .option div:hover {
+    background: #62baea;
+    color: #fff;
+
+
+}
+
+.dropdown .option div i {
+    position: relative;
+    top: 4px;
+    font-size: 1.2em;
+
+}
+
+#pd-rdiv {
+    position: relative;
+    width: 72%;
+    height: 100%;
+    background-color: rgb(231, 255, 233);
+}
+
+#pd-rdiv #top-div {
+    padding: 2vw 4vw;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#pd-rdiv #top-div .products {
+    position: relative;
+    height: 250px;
+    border: 1px solid rgba(0, 0, 0, 0.418);
+    border-radius: 30px;
+    width: 250px;
+    overflow: hidden;
+    transition: 1s;
+
+    /* background-color: red; */
+}
+
+#pd-rdiv #top-div .products img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    transition: 1s;
+}
+
+#pd-rdiv #bottom-div {
+    padding: 2vw 4vw;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#pd-rdiv #bottom-div .products {
+    position: relative;
+    height: 250px;
+    border: 1px solid rgba(0, 0, 0, 0.342);
+    border-radius: 30px;
+    width: 250px;
+    /* background-color: red; */
+    overflow: hidden;
+    transition: 1s;
+
+}
+
+#pd-rdiv #bottom-div .products img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    transition: 1s;
+
+}
+
+#pd-rdiv .products {
+    box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.425);
+}
+
+#pd-rdiv .products:hover {
+    box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.699);
+
+
+    opacity: 0.8;
+}
+
+#pd-rdiv .products:hover img {
+    scale: 1.1;
+}
+
+#buying {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+#buying button {
+    width: 200px;
+    height: 50px;
+    padding: 1vw 2vw;
+    font-size: 1vw;
+    border-radius: 20px;
+    background-color: transparent;
+    border: 1px solid rgba(0, 0, 0, 0.425);
+    transition: .5s;
+}
+
+#buying button:hover {
+    background-color: rgba(0, 0, 0, 0.438);
+    color: white;
+}
+
+@media screen and (max-width:767px) {
+    #pd-ldiv {
+        padding: 11vw 0vw;
+        padding-right: 8vw;
+    }
+
+    #buying button {
+        width: 120px;
+        font-size: 3vw;
+    }
+
+    .dropdown {
+        margin-left: -14px;
+        width: 110px;
+    }
+
+
+    #pd-rdiv {
+        padding: 2vw 1vw;
+        overflow: auto;
+    }
+
+    #pd-rdiv #top-div {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    #pd-rdiv #top-div .products {
+        height: 150px;
+        width: 150px;
+        object-position: center;
+    }
+
+    #pd-rdiv #bottom-div {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    #pd-rdiv #bottom-div .products {
+        height: 150px;
+        width: 150px;
+        object-position: center;
+    }
+
+}
